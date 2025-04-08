@@ -1,3 +1,2 @@
 <?php
-    echo "Sa marche";
-    
+    echo "Bonjour";
