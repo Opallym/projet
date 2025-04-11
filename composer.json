@@ -3,7 +3,8 @@
     "description": "projet groupe Laval",
     "autoload": {
         "psr-4": {
-            "Projet\\Cityscape\\": "src/",
+            "Framework\\": "src/Framework",
+            "App\\": "src",
             "Tests\\": "tests"
         }
     },
