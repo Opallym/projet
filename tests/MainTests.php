@@ -7,6 +7,5 @@ class MainTests
     public function __construct()
     {
 
-        
     }
 }
