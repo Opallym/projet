@@ -18,7 +18,11 @@
         "phpunit/phpunit": "^12.1",
         "friendsofphp/php-cs-fixer": "^3.75"
     },
+
     "require": {
         "guzzlehttp/psr7": "^2.7"
+
+    "scripts": {
+        "cs-fixer": "php-cs-fixer fix --config=.php-cs-fixer.dist.php"
     }
 }
