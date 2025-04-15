@@ -2,8 +2,8 @@
 namespace Framework;
 
 use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class App
 {
@@ -41,6 +41,7 @@ class App
         if ($uri === '/faq') {
             return new Response(200, [], '<h1>F.A.Q</h1>'); // Retourne une réponse 200 OK avec du HTML.
         }
+
         return new Response(404, [], '<h1>Erreur 404 - Page non trouvée</h1>');
     }
 }
