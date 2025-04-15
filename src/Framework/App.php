@@ -2,8 +2,8 @@
 namespace Framework;
 
 use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class App
 {
@@ -18,13 +18,14 @@ class App
                 ->withHeader('Location', substr($uri, 0, -1)); // Envoie un en-tête de redirection Location pour retirer le slash.
         }
 
-        if ($uri === '/mom-compte') {
+        if ($uri === '/mon-compte') {
             return new Response(200, [], '<h1>Mon compte</h1>'); // Retourne une réponse 200 OK avec du HTML.
         }
 
         if ($uri === '/vente') {
             return new Response(200, [], '<h1>Cath. vente</h1>'); // Retourne une réponse 200 OK avec du HTML.
         }
+
         if ($uri === '/vente/maison/8') {
             return new Response(200, [], '<h1>Cath. detail vente</h1>'); // Retourne une réponse 200 OK avec du HTML.
         }
@@ -40,5 +41,7 @@ class App
         if ($uri === '/faq') {
             return new Response(200, [], '<h1>F.A.Q</h1>'); // Retourne une réponse 200 OK avec du HTML.
         }
+
+        return new Response(404, [], '<h1>Erreur 404 - Page non trouvée</h1>');
     }
 }
