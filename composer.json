@@ -16,11 +16,15 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^12.1",
-        "friendsofphp/php-cs-fixer": "^3.75"
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "squizlabs/php_codesniffer": "*"
     },
 
     "require": {
-        "guzzlehttp/psr7": "^2.7"
+        "guzzlehttp/psr7": "*",
+        "http-interop/response-sender": "*",
+        "zendframework/zend-expressive-fastroute": "*",
+        "twig/twig": "*"
     },
 
     "scripts": {

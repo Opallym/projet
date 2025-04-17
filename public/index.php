@@ -1,5 +1,14 @@
 <?php
 require '../vendor/autoload.php';
 
-$app = new \Framework\App();
-$app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
+$renderer = new \Framework\Renderer\TwigRenderer(dirname(__DIR__) . '/views');
+
+$app = new \Framework\App([
+    \App\Blog\BlogModule::class
+    // properties
+    // F.A.Q
+],[
+    'renderer'=>$renderer
+]);
+$response = $app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
+\Http\Response\Send($response);

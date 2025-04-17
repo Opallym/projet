@@ -47,7 +47,7 @@ class GwendolineTest extends TestCase
     {
         $request = new ServerRequest('GET', '/azerty');
         $response = $this->app->run($request);
-        
+
         // Check if the response body contains 'Erreur 404'
         $this->assertStringContainsString(
             'Erreur 404',
