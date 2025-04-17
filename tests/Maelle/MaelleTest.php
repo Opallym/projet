@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Maelle;
 
 use Framework\App;
@@ -12,9 +13,9 @@ class MaelleTest extends TestCase
         $app = new App();
         $request = new ServerRequest('GET', '/mon-compte');
         $response = $app->run($request);
-        
+
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertStringContainsString('<h1>Mon compte</h1>',(string)$response->getBody());
+        $this->assertStringContainsString('<h1>Mon compte</h1>', (string)$response->getBody());
     }
-    
+
 }

@@ -5,7 +5,6 @@ namespace Tests\Sara;
 use Framework\App;
 use GuzzleHttp\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 
 class SaraTest extends TestCase
 {
