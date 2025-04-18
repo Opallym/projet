@@ -35,10 +35,9 @@ class Route
      * Constructeur : initialise la route avec ses propriétés
      *
      * @param string   $name       Le nom de la route
-     * @param callable $callback   Le contrôleur associé
      * @param array    $parameters Les paramètres extraits de l'URL
      */
-    public function __construct(string $name, callable $callback, array $parameters)
+    public function __construct(string $name, $callback, array $parameters)
     {
         $this->name = $name;
         $this->callback = $callback;
@@ -60,7 +59,7 @@ class Route
      *
      * @return callable
      */
-    public function getCallback(): callable
+    public function getCallback()
     {
         return $this->callback;
     }

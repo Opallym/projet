@@ -2,23 +2,24 @@
 
 namespace App\Home;
 
+use Framework\Module;
 use Framework\Router;
+use App\Home\Actions\HomeAction;
 use Framework\Renderer\RendererInterface;
 
-class HomeModule
+class HomeModule extends Module
 {
-    public function __construct(
-        private Router $router,
-        private RendererInterface $renderer
-    ) {
-        $this->renderer->addPath('home', __DIR__ . '/views');
+   
+    const DEFINITIONS = __DIR__ . '/config.php';
 
-        $router->get('/', [$this, 'index'], 'home.index');
-    }
-
-    public function index(): string
+    public function __construct( string $prefix, Router $router, RendererInterface $renderer) 
     {
-        return $this->renderer->render('@home/index');
+        $renderer->addPath('home', __DIR__ . '/views');
+
+        $router->get($prefix , HomeAction::class, 'home.index');
+        $router->get($prefix . '/{slug:[a-z\-0-9]+}', HomeAction::class, 'home.show');
     }
+
+    
 
 }
