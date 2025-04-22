@@ -9,6 +9,7 @@ use Framework\App;
 // s à la fin pcq c'est un tableau
 $modules = [
     \App\Blog\BlogModule::class,
+    \App\Users\UserModule::class,
     // \App\Home\HomeModule::class,
     /*\App\Contact\ContactModule::class, 
     \App\Cart\CartModule::class,
