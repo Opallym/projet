@@ -1,7 +1,7 @@
 <?php
 
 
-require '../vendor/autoload.php';
+require dirname(__DIR__ ).  '/vendor/Autoload.php';
 
 use Framework\App;
 
@@ -9,7 +9,7 @@ use Framework\App;
 // s à la fin pcq c'est un tableau
 $modules = [
     \App\Blog\BlogModule::class,
-    \App\Home\HomeModule::class,
+    // \App\Home\HomeModule::class,
     /*\App\Contact\ContactModule::class, 
     \App\Cart\CartModule::class,
     \App\Faq\FaqModule::class,
@@ -31,5 +31,8 @@ foreach($modules as $module){
 $container = $builder->build();
 
 $app = new \Framework\App($container, $modules);  // est égal au use 
-$response = $app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
-\Http\Response\send($response);
+if(php_sapi_name()!== "cli")
+{   
+    $response = $app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
+    \Http\Response\send($response);
+}
