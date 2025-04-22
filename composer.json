@@ -25,7 +25,9 @@
         "http-interop/response-sender": "*",
         "zendframework/zend-expressive-fastroute": "*",
         "twig/twig": "*",
-        "php-di/php-di": "^7.0"
+        "php-di/php-di": "^7.0",
+        "robmorgan/phinx": "^0.16.7",
+        "fakerphp/faker": "^1.24"
     },
 
     "scripts": {

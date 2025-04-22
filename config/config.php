@@ -8,6 +8,10 @@ use Framework\Renderer\TwigRendererFactory;
 
 
 return [
+    'database.host'=>'localhost',
+    'database.name'=>'cityscape',
+    'database.username'=>'root',
+    'database.password'=>'',
     'views.path' => dirname(__DIR__) . '/views',
     'twig.extension' => [
         \DI\get(RouterTwigExtension::class)

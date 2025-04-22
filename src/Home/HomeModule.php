@@ -8,7 +8,7 @@ use App\Home\Actions\HomeAction;
 use Framework\Renderer\RendererInterface;
 
 class HomeModule extends Module
-{
+{   
    
     const DEFINITIONS = __DIR__ . '/config.php';
 
