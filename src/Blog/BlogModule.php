@@ -6,7 +6,6 @@ use Framework\Module;
 use Framework\Router;
 use App\Blog\Actions\BlogAction;
 use Framework\Renderer\RendererInterface;
-use Psr\Http\Message\ServerRequestInterface as Request;
 
 class BlogModule extends Module
 {
