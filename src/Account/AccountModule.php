@@ -2,7 +2,7 @@
 
 namespace App\Account;
 
-class AccountModule
+class AccountModule extends Module
 {
     public function __construct()
     {
