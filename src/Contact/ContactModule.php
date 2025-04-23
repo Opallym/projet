@@ -2,6 +2,7 @@
 
 namespace App\Contact;
 
+use Framework\Module;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 
