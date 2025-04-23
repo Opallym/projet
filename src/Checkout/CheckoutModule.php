@@ -5,7 +5,7 @@ namespace App\Checkout;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 
-class CheckoutModule
+class CheckoutModule extends Module
 {
     public function __construct(
         private Router $router,

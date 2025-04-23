@@ -2,7 +2,7 @@
 
 namespace App\Authentificator;
 
-class ForgotPassword
+class ForgotPassword extends Module
 {
     public function __construct()
     {

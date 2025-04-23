@@ -2,7 +2,7 @@
 
 namespace App\Authentificator;
 
-class LoginModule
+class LoginModule extends Module
 {
     public function __construct()
     {

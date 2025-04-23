@@ -2,7 +2,9 @@
 
 namespace App\Users;
 
-class UserModule
+use Framework\Module;
+
+class UserModule extends Module
 {
     const DEFINITIONS = __DIR__ . '/config.php';
     const MIGRATIONS = __DIR__ . '/db/migrations';

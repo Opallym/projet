@@ -2,7 +2,7 @@
 
 namespace App\Admin;
 
-class AdminModule
+class AdminModule extends Module
 {
     public function __construct()
     {
