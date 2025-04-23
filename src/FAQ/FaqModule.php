@@ -2,10 +2,11 @@
 
 namespace App\FAQ;
 
+use Framework\Module;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 
-class FaqModule
+class FaqModule extends Module
 {
     public function __construct(
         private Router $router,

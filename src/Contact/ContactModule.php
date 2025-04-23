@@ -5,7 +5,7 @@ namespace App\Contact;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 
-class ContactModule
+class ContactModule extends Module
 {
     public function __construct(
         private Router $router,

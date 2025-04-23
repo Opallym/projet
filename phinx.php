@@ -1,7 +1,10 @@
 <?php
+
 require './public/index.php';
+
 $migrations = [];
 $seeds = [];
+
 foreach($modules as $module) 
 {
     if($module::MIGRATIONS)

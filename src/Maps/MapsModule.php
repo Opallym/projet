@@ -5,7 +5,7 @@ namespace App\Maps;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 
-class MapsModule
+class MapsModule extends Module
 {
     public function __construct(
         private Router $router,

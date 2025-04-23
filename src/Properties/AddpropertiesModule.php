@@ -2,7 +2,7 @@
 
 namespace App\Properties;
 
-class AddpropertiesModule
+class AddpropertiesModule extends Module
 {
     public function __construct()
     {
