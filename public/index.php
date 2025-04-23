@@ -16,6 +16,7 @@ $modules = [
     \App\Home\HomeModule::class,
     \App\Contact\ContactModule::class, 
     \App\Checkout\CheckoutModule::class
+
 ];
 
 $builder = new \DI\ContainerBuilder();
