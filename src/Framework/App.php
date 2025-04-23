@@ -9,8 +9,6 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class App
 {
-    
-
     public function __construct(
         private ContainerInterface $container,
         private array $modules = []
