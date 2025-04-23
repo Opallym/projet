@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Properties;
+namespace App\Authentificator;
 
 use Framework\Module;
 
-class AddpropertiesModule extends Module
+class AddregisterModule extends Module
 {
     public function __construct()
     {

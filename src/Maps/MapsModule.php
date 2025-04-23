@@ -2,6 +2,7 @@
 
 namespace App\Maps;
 
+use Framework\Module;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
 

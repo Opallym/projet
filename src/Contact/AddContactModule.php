@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Properties;
+namespace App\Contact;
 
 use Framework\Module;
 
-class AddpropertiesModule extends Module
+class AddContactModule extends Module
 {
     public function __construct()
     {
