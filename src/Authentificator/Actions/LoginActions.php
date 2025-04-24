@@ -22,12 +22,12 @@ class LoginActions
     }
     public function index(): string
     {
-        return $this->renderer->render('@loginindex/index');
+        return $this->renderer->render('@login/index');
     }
 
     public function show(string $slug): string
     {
-        return $this->renderer->render('@loginshow/show', [
+        return $this->renderer->render('@login/show', [
             [
                 'slug' => $slug
             ]

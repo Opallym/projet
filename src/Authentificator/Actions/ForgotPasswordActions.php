@@ -22,12 +22,12 @@ class ForgotPasswordActions
     }
     public function index(): string
     {
-        return $this->renderer->render('@forgotpasswordindex/index');
+        return $this->renderer->render('@forgotpassword/index');
     }
 
     public function show(string $slug): string
     {
-        return $this->renderer->render('@forgotpasswordshow/show', [
+        return $this->renderer->render('@forgotpassword/show', [
             [
                 'slug' => $slug
             ]
