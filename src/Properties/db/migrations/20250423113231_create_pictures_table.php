@@ -12,7 +12,8 @@ final class CreatePicturesTable extends AbstractMigration
         $this->table('pictures')
             ->addColumn('name','string')
             ->addColumn('position','integer')
-            ->addForeignKey('property_id', 'properties', 'id')
+            ->addColumn('properties_id', 'integer')
+            ->addForeignKey('properties_id', 'properties', 'id')
             ->create();
 
     }
