@@ -4,25 +4,21 @@ use Phinx\Seed\AbstractSeed;
 
 class PicturesSeeder extends AbstractSeed
 {
-    public function getDependencies(): array
-    {
-        return [
-            'PropertiesSeeder'
-        ];
-    }
+    public static array $insertedIds = [];
 
     public function run(): void
     { 
+        $propertiesIds = $this->getAdapter()->fetchAll('SELECT id FROM properties');
+        $propertiesIds = array_column($propertiesIds, 'id');
         $data = [];
         $faker = \Faker\Factory::create();
-        $date = $faker->unixTime('now');
 
-        for($i=0 ;$i<100 ;$i++)
+        foreach($propertiesIds as $propertyId)
         {
             $data[]=[
-                'name'=>$faker->words(3,true),
-                'position'=>$faker->randomNumber(2, true),
-                'properties_id'
+                'name' => $faker->words(3,true),
+                'position' => $faker->randomNumber(2, true),
+                'properties_id' =>  $propertyId
             ];
         }
 
