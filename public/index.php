@@ -9,14 +9,12 @@ use Framework\App;
 // s à la fin pcq c'est un tableau
 $modules = [
     \App\Blog\BlogModule::class,
-    \App\Users\UserModule::class,
     \App\Faq\FaqModule::class,
     \App\Properties\PropertiesModule::class,
     \App\Cart\CartModule::class,
     \App\Home\HomeModule::class,
     \App\Contact\ContactModule::class, 
     \App\Checkout\CheckoutModule::class
-
 ];
 
 $builder = new \DI\ContainerBuilder();
