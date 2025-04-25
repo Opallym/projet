@@ -11,6 +11,7 @@ class HomeModule extends Module
 {   
    
     const DEFINITIONS = __DIR__ . '/config.php';
+    const MIGRATIONS = __DIR__ . '/Category/config.php';
 
     public function __construct( string $prefix, Router $router, RendererInterface $renderer) 
     {

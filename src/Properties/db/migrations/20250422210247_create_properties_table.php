@@ -9,7 +9,7 @@ final class CreatePropertiesTable extends AbstractMigration
 
     public function change(): void
     {
-        $this->table('properties', ['id' => false, 'primary_key' => 'id'])
+        $this->table('properties', ['id' => false, 'primary_key' => ['id']])
             ->addColumn('id', 'integer', ['identity' => true])
             ->addColumn('user_id', 'integer')
             ->addColumn('title', 'string')
@@ -28,10 +28,11 @@ final class CreatePropertiesTable extends AbstractMigration
             ->addColumn('garden', 'boolean')
             ->addColumn('balcon', 'boolean')
             ->addColumn('elevator', 'boolean')
-            ->addColumn('view', 'enum', ['values' => ['sea', 'mountain', 'city', 'garden']])
+            //->addColumn('view', 'enum', ['values' => ['South', 'North', 'West', 'East']])
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
             ->addForeignKey('user_id', 'users', 'id')
+            //->addColumn('phone_number', 'string')
 
             ->create();
     }

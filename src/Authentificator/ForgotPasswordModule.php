@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Users;
+namespace App\Authentificator;
 
 use Framework\Module;
 
-class UserModule extends Module
+class ForgotPasswordModule extends Module
 {
     const DEFINITIONS = __DIR__ . '/config.php';
     const MIGRATIONS = __DIR__ . '/db/migrations';
     const SEEDS= __DIR__ . '/db/seeds';
-    
     public function __construct()
     {
-        echo 'User';
+        echo 'Forgot password';
     }
 }

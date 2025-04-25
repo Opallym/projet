@@ -1,21 +1,24 @@
 <?php
 
-declare(strict_types=1);
-
 use Phinx\Seed\AbstractSeed;
+use PhpParser\Builder\Property;
 
-class UsersSeeder extends AbstractSeed
+class PropertiesSeeder extends AbstractSeed
 {
-
+    
     public function run(): void
     {
+
+        $usersIds = $this->getAdapter()->fetchAll('SELECT id FROM users');
+        $usersIds = array_column($usersIds, 'id');
         $data = [];
         $faker = \Faker\Factory::create();
         $date = $faker->unixTime('now');
 
-        for ($i = 0; $i < 100; $i++) {
-            $data[] = [
-                'user_id'     => $faker->numberBetween(1, 100),
+        for($i=0 ;$i<100 ;$i++)
+        {
+            $data[]=[
+                'user_id'     => $faker->numberBetween(1, 100), 
                 'title'       => $faker->sentence(4),
                 'description' => $faker->paragraph(3),
                 'type'        => $faker->randomElement(['house', 'apartment', 'villa']),
@@ -33,14 +36,17 @@ class UsersSeeder extends AbstractSeed
                 'balcon'      => $faker->boolean,
                 'elevator'    => $faker->boolean,
                 'view'        => $faker->randomElement(['sea', 'mountain', 'city', 'garden']),
-                'updated_at' => date('Y-m-d H:i:s', $date),
-                'register_at' => date('Y-m-d H:i:s', $date),
-                'phone_number' => $faker->phoneNumber(),
+                'updated_at'=>date('Y-m-d H:i:s',$date),
+                'register_at'=>date('Y-m-d H:i:s',$date),
+                'phone_number'=>$faker->phoneNumber(),
             ];
         }
 
         $this->table('properties')
             ->insert($data)
             ->save();
+
+        $row = $this->getAdapter()->fetchAll('SELECT id FROM properties');
+        PicturesSeeder::$insertedIds = array_column($row, 'id');
     }
 }
