@@ -1,0 +1,58 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<!-- ==================== Breadcrumb Start Here ==================== -->
+<section class="breadcrumb padding-y-120">
+    <img src="/assets/images/thumbs/breadcrumb-img.png" alt="" class="breadcrumb__img">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="breadcrumb__wrapper text-center">
+                    <h2 class="breadcrumb__title">Détail de la question</h2>
+                    <ul class="breadcrumb__list justify-content-center">
+                        <li class="breadcrumb__item">
+                            <a href="/" class="breadcrumb__link">
+                                <i class="las la-home"></i> Accueil
+                            </a>
+                        </li>
+                        <li class="breadcrumb__item"><i class="fas fa-angle-right"></i></li>
+                        <li class="breadcrumb__item">
+                            <a href="/faq" class="breadcrumb__link">FAQ</a>
+                        </li>
+                        <li class="breadcrumb__item"><i class="fas fa-angle-right"></i></li>
+                        <li class="breadcrumb__item">
+                            <span class="breadcrumb__item-text">Détail</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==================== Breadcrumb End Here ==================== -->
+
+<!-- ==================== FAQ Detail Start ==================== -->
+<section class="faq-detail padding-y-120">
+    <div class="container container-two">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="faq-detail-box">
+                    <h3 class="faq-detail-box__title text-gradient">
+                        {{ faq.question }}
+                    </h3>
+                    <p class="faq-detail-box__text font-18 mt-4">
+                        {{ faq.answer }}
+                    </p>
+
+                    <div class="mt-5">
+                        <a href="/faq" class="btn btn-main">
+                            ← Retour à la liste
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==================== FAQ Detail End ==================== -->
+{% endblock %}

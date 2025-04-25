@@ -5,20 +5,19 @@ namespace App\FAQ;
 use Framework\Module;
 use Framework\Router;
 use Framework\Renderer\RendererInterface;
+use App\FAQ\Actions\FaqAction;
 
 class FaqModule extends Module
-{
-    public function __construct(
-        private Router $router,
-        private RendererInterface $renderer
-    ) {
-        $this->renderer->addPath('faq', __DIR__ . '/views');
+{   
+    const DEFINITIONS = __DIR__ . '/config.php';
+    const MIGRATIONS = __DIR__ . '/db/migrations';
+    const SEEDS = __DIR__ . '/db/seeds';
 
-        $router->get('/faq', [$this, 'index'], 'faq.index');
-    }
-
-    public function index(): string
+    public function __construct(Router $router, RendererInterface $renderer)
     {
-        return $this->renderer->render('@faq/index');
+        $renderer->addPath('faq', __DIR__ . '/views');
+
+        $router->get('/faq', FaqAction::class, 'faq.index');
+        $router->get('/faq/{slug:[a-z0-9\-]+}', FaqAction::class, 'faq.show');
     }
 }
