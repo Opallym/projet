@@ -2,13 +2,15 @@
 
 namespace App\Home\Actions;
 
+use App\Home\Table\PropertiesHomeTable;
 use Framework\Renderer\RendererInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 class HomeAction
 {
     public function __construct(
-        private RendererInterface $renderer
+        private RendererInterface $renderer,
+        private PropertiesHomeTable $properties
     ){}
 
     public function __invoke(Request $request)
@@ -20,18 +22,20 @@ class HomeAction
         }
         return $this->index();
     }
+
     public function index(): string
     {
-        return $this->renderer->render('@home/index');
+        $properties = $this->properties->findPaginated();
+        return $this->renderer->render('@home/index', compact('properties'));
     }
 
-    public function show(string $slug): string
+    public function show(string $slug)
     {
-        return $this->renderer->render('@home/show', [
+        /*return $this->renderer->render('@home/show', [
             [
                 'slug' => $slug
             ]
-        ]);
+        ]);*/
     }
     
 }
