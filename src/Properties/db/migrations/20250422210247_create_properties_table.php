@@ -28,12 +28,11 @@ final class CreatePropertiesTable extends AbstractMigration
             ->addColumn('garden', 'boolean')
             ->addColumn('balcon', 'boolean')
             ->addColumn('elevator', 'boolean')
-            //->addColumn('view', 'enum', ['values' => ['South', 'North', 'West', 'East']])
+            ->addColumn('orientation', 'enum', ['values' => ['South', 'North', 'West', 'East']]) // anciennement 'view'
+            ->addColumn('phone_number', 'string') 
             ->addColumn('created_at', 'datetime')
             ->addColumn('updated_at', 'datetime')
             ->addForeignKey('user_id', 'users', 'id')
-            //->addColumn('phone_number', 'string')
-
             ->create();
     }
 }

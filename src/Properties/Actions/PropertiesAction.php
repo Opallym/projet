@@ -16,22 +16,12 @@ class PropertiesAction
         $slug = $request->getAttribute('slug');
 
         if($slug){
-            return $this->show($slug);
+            return $this->renderer->render('@properties/show',['slug' => $slug]);
         }
         return $this->index();
     }
     public function index(): string
     {
         return $this->renderer->render('@properties/index');
-    }
-
-    public function show(string $slug): string
-    {
-        return $this->renderer->render('@properties/show', [
-            [
-                'slug' => $slug
-            ]
-        ]);
-    }
-    
+    }     
 }
