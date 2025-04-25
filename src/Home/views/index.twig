@@ -516,8 +516,8 @@
 						</span>
 					</a>
 				</div>
-
 				<div class="row gy-4">
+					{% for property in properties %}
 					<div class="col-lg-4 col-sm-6">
 						<div class="property-item">
 							<div class="property-item__thumb">
@@ -527,31 +527,30 @@
 								<span class="property-item__badge">Sale</span>
 							</div>
 							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
+								<h6 class="property-item__price">${{ property.price }}
 								</h6>
 								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
+									<a href="property-details.html" class="link">{{ property.description }}
 									</a>
 								</h6>
 								<p class="property-item__location d-flex gap-2">
 									<span class="icon">
 										<i class="fas fa-map-marker-alt"></i>
 									</span>
-									66 Broklyant, New York America</p>
+									{{ property.address }}</p>
 								<div class="property-item__bottom flx-between gap-2">
 									<ul class="amenities-list flx-align">
 										<li class="amenities-list__item flx-align">
 											<span class="icon">
 												<i class="fas fa-bed"></i>
 											</span>
-											<span class="text">3 Beds</span>
+											<span class="text">{{ property.chamber }}</span>
 										</li>
 										<li class="amenities-list__item flx-align">
 											<span class="icon">
 												<i class="fas fa-bath"></i>
 											</span>
-											<span class="text">3 Baths</span>
+											<span class="text">{{ property.bathroom }}</span>
 										</li>
 									</ul>
 									<a href="#" class="simple-btn">Book Now
@@ -563,241 +562,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="property-item">
-							<div class="property-item__thumb">
-								<a href="property-details.html" class="link">
-									<img src="assets/images/thumbs/property-2.png" alt="" class="cover-img">
-								</a>
-								<span class="property-item__badge">Sale</span>
-							</div>
-							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
-								</h6>
-								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
-									</a>
-								</h6>
-								<p class="property-item__location d-flex gap-2">
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									66 Broklyant, New York America</p>
-								<div class="property-item__bottom flx-between gap-2">
-									<ul class="amenities-list flx-align">
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bed"></i>
-											</span>
-											<span class="text">3 Beds</span>
-										</li>
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bath"></i>
-											</span>
-											<span class="text">3 Baths</span>
-										</li>
-									</ul>
-									<a href="#" class="simple-btn">Book Now
-										<span class="icon-right">
-											<i class="fas fa-arrow-right"></i>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="property-item">
-							<div class="property-item__thumb">
-								<a href="property-details.html" class="link">
-									<img src="assets/images/thumbs/property-3.png" alt="" class="cover-img">
-								</a>
-								<span class="property-item__badge">Sale</span>
-							</div>
-							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
-								</h6>
-								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
-									</a>
-								</h6>
-								<p class="property-item__location d-flex gap-2">
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									66 Broklyant, New York America</p>
-								<div class="property-item__bottom flx-between gap-2">
-									<ul class="amenities-list flx-align">
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bed"></i>
-											</span>
-											<span class="text">3 Beds</span>
-										</li>
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bath"></i>
-											</span>
-											<span class="text">3 Baths</span>
-										</li>
-									</ul>
-									<a href="#" class="simple-btn">Book Now
-										<span class="icon-right">
-											<i class="fas fa-arrow-right"></i>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="property-item">
-							<div class="property-item__thumb">
-								<a href="property-details.html" class="link">
-									<img src="assets/images/thumbs/property-4.png" alt="" class="cover-img">
-								</a>
-								<span class="property-item__badge">Sale</span>
-							</div>
-							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
-								</h6>
-								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
-									</a>
-								</h6>
-								<p class="property-item__location d-flex gap-2">
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									66 Broklyant, New York America</p>
-								<div class="property-item__bottom flx-between gap-2">
-									<ul class="amenities-list flx-align">
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bed"></i>
-											</span>
-											<span class="text">3 Beds</span>
-										</li>
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bath"></i>
-											</span>
-											<span class="text">3 Baths</span>
-										</li>
-									</ul>
-									<a href="#" class="simple-btn">Book Now
-										<span class="icon-right">
-											<i class="fas fa-arrow-right"></i>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="property-item">
-							<div class="property-item__thumb">
-								<a href="property-details.html" class="link">
-									<img src="assets/images/thumbs/property-5.png" alt="" class="cover-img">
-								</a>
-								<span class="property-item__badge">Sale</span>
-							</div>
-							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
-								</h6>
-								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
-									</a>
-								</h6>
-								<p class="property-item__location d-flex gap-2">
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									66 Broklyant, New York America</p>
-								<div class="property-item__bottom flx-between gap-2">
-									<ul class="amenities-list flx-align">
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bed"></i>
-											</span>
-											<span class="text">3 Beds</span>
-										</li>
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bath"></i>
-											</span>
-											<span class="text">3 Baths</span>
-										</li>
-									</ul>
-									<a href="#" class="simple-btn">Book Now
-										<span class="icon-right">
-											<i class="fas fa-arrow-right"></i>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<div class="property-item">
-							<div class="property-item__thumb">
-								<a href="property-details.html" class="link">
-									<img src="assets/images/thumbs/property-6.png" alt="" class="cover-img">
-								</a>
-								<span class="property-item__badge">Sale</span>
-							</div>
-							<div class="property-item__content">
-								<h6 class="property-item__price">$500.00
-									<span class="day">/per day</span>
-								</h6>
-								<h6 class="property-item__title">
-									<a href="property-details.html" class="link">Paramount Investments Prestige Property Management
-									</a>
-								</h6>
-								<p class="property-item__location d-flex gap-2">
-									<span class="icon">
-										<i class="fas fa-map-marker-alt"></i>
-									</span>
-									66 Broklyant, New York America</p>
-								<div class="property-item__bottom flx-between gap-2">
-									<ul class="amenities-list flx-align">
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bed"></i>
-											</span>
-											<span class="text">3 Beds</span>
-										</li>
-										<li class="amenities-list__item flx-align">
-											<span class="icon">
-												<i class="fas fa-bath"></i>
-											</span>
-											<span class="text">3 Baths</span>
-										</li>
-									</ul>
-									<a href="#" class="simple-btn">Book Now
-										<span class="icon-right">
-											<i class="fas fa-arrow-right"></i>
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="text-center property__btn">
-					<a href="#" class="btn btn-main">
-						Sell All Listing
-						<span class="icon-right">
-							<i class="fas fa-arrow-right"></i>
-						</span>
-					</a>
-				</div>
-			</div>
+				{% endfor %}
+			</div>	
 		</section>
 		<!-- ============================ property End ==================== -->
 		<!-- ======================= Property Section Start ================================== -->
