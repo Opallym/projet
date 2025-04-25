@@ -22,12 +22,12 @@ class RegisterActions
     }
     public function index(): string
     {
-        return $this->renderer->render('@registerindex/index');
+        return $this->renderer->render('@register/index');
     }
 
     public function show(string $slug): string
     {
-        return $this->renderer->render('@registerindex/show', [
+        return $this->renderer->render('@register/show', [
             [
                 'slug' => $slug
             ]

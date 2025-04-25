@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Authentificator\Actions;
+namespace App\Checkout;
+
 
 use Framework\Renderer\RendererInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class LoginActions
+class CheckoutAction
 {
     public function __construct(
         private RendererInterface $renderer
@@ -22,12 +23,12 @@ class LoginActions
     }
     public function index(): string
     {
-        return $this->renderer->render('@login/index');
+        return $this->renderer->render('@Checkout/index');
     }
 
     public function show(string $slug): string
     {
-        return $this->renderer->render('@login/show', [
+        return $this->renderer->render('@Checkout/show', [
             [
                 'slug' => $slug
             ]
