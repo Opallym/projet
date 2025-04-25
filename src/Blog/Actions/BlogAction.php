@@ -2,36 +2,44 @@
 
 namespace App\Blog\Actions;
 
+use App\Blog\Table\BlogTable;
+use Framework\Actions\RouterAwareAction;
 use Framework\Renderer\RendererInterface;
+use Framework\Router;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 class BlogAction
 {
-    public function __construct(
-        private RendererInterface $renderer
-    ){}
+    use RouterAwareAction;
 
-    public function __invoke(Request $request)
+    public function __construct(
+        private RendererInterface $renderer,
+        private Router $router,
+        private BlogTable $blogTable
+    ) {
+    }
+
+    public function __invoke(Request $request): string|ResponseInterface
     {
         $slug = $request->getAttribute('slug');
-
-        if($slug){
-            return $this->show($slug);
-        }
-        return $this->index();
+        return $slug ? $this->show($slug) : $this->index();
     }
+
     public function index(): string
-    {
-        return $this->renderer->render('@blog/index');
+    {        $blogs = $this->blogTable->findPaginated();
+
+        return $this->renderer->render('@blog/index', compact('blogs'));
     }
 
-    public function show(string $slug): string
+    public function show(string $slug): string|ResponseInterface
     {
-        return $this->renderer->render('@blog/show', [
-            [
-                'slug' => $slug
-            ]
-        ]);
+        $blog = $this->blogTable->findBySlug($slug);
+
+        if (!$blog) {
+            return $this->renderer->render('@blog/404');
+        }
+
+        return $this->renderer->render('@blog/show', ['blog' => $blog]);
     }
-    
 }
