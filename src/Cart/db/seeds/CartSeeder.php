@@ -19,7 +19,7 @@ class CartSeeder extends AbstractSeed
                 'reference'=>$faker->randomNumber(5, true),
                 'pricettc'=>$faker->randomFloat(2, 1, 1000),
                 'priceht'=>$faker->randomFloat(2, 1, 1000),
-                'rntrydate'=>date('Y-m-d H:i:s',$date),
+                'entryDate'=>date('Y-m-d H:i:s',$date),
                 'releasedate'=>date('Y-m-d H:i:s',$date)
 
             ];
