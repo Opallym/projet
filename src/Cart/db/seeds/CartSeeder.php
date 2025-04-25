@@ -16,16 +16,16 @@ class CartSeeder extends AbstractSeed
         {
             $data[]=[
                 'slug'=>$faker->slug(),
-                'Reference'=>$faker->randomNumber(5, true),
-                'PriceTTC'=>$faker->randomFloat(2, 1, 1000),
-                'priceHT'=>$faker->randomFloat(2, 1, 1000),
-                'EntryDate'=>date('Y-m-d H:i:s',$date),
-                'ReleaseDate'=>date('Y-m-d H:i:s',$date)
+                'reference'=>$faker->randomNumber(5, true),
+                'pricettc'=>$faker->randomFloat(2, 1, 1000),
+                'priceht'=>$faker->randomFloat(2, 1, 1000),
+                'rntrydate'=>date('Y-m-d H:i:s',$date),
+                'releasedate'=>date('Y-m-d H:i:s',$date)
 
             ];
         }
 
-        $this->table('Cart')
+        $this->table('cart')
             ->insert($data)
             ->save();
     }
