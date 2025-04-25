@@ -8,10 +8,6 @@ final class CreateCartTable extends AbstractMigration
 {
     public function change(): void
     {
-        $usersTable = $this->table('users');
-        $usersTable->addColumn('name', 'string')
-                  ->addColumn('email', 'string')
-                  ->create();
 
         // Création de la table Cart ensuite
         $cartTable = $this->table('Cart');
