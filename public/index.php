@@ -1,38 +1,26 @@
 <?php
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-
-require dirname(__DIR__ ).  '/vendor/Autoload.php';
-
-use Framework\App;
-
-
-// s à la fin pcq c'est un tableau
 $modules = [
-    \App\Blog\BlogModule::class,
-    \App\Faq\FaqModule::class,
-    \App\Properties\PropertiesModule::class,
-    \App\Cart\CartModule::class,
-    \App\Home\HomeModule::class,
-    \App\Contact\ContactModule::class, 
-    \App\Checkout\CheckoutModule::class
+    \App\Blog\BlogModule::class
 ];
 
 $builder = new \DI\ContainerBuilder();
+
 $builder->addDefinitions(dirname(__DIR__) . '/config/config.php');
-//$builder->addDefinitions(dirname(__DIR__) . '/config.php');
 
-
-foreach($modules as $module){
-    if($module::DEFINITIONS){
+foreach ($modules as $module) {
+    if ($module::DEFINITIONS) {
         $builder->addDefinitions($module::DEFINITIONS);
     }
 }
 
+$builder->addDefinitions(dirname(__DIR__) . '/config.php');
 $container = $builder->build();
 
-$app = new \Framework\App($container, $modules);  // est égal au use 
-if(php_sapi_name()!== "cli")
-{   
+$app = new \Framework\App($container, $modules);
+
+if (php_sapi_name() !== "cli") {
     $response = $app->run(\GuzzleHttp\Psr7\ServerRequest::fromGlobals());
     \Http\Response\send($response);
 }

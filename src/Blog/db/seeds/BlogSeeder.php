@@ -1,32 +1,25 @@
 <?php
 
-
 use Phinx\Seed\AbstractSeed;
 
-class BlogSeeder extends AbstractSeed
+class PostSeeder extends AbstractSeed
 {
-    public function run(): void
-    { 
+    public function run()
+    {
         $data = [];
-        $faker = \Faker\Factory::create();
-        $date = $faker->unixTime('now');
-
-        for($i=0 ;$i<100 ;$i++)
-        {
-            $data[]=[
-                'title'=>$faker->words(3,true),
-                'slug'=>$faker->slug(),
-                'content'=>$faker->sentence(),
-                'photo'=>$faker->imageUrl()  ,
-                'created_at'=>date('Y-m-d H:i:s',$date),
-                'updated_at'=>date('Y-m-d H:i:s',$date),
-
+        $faker = \Faker\Factory::create('fr_FR');
+        for ($i = 0; $i < 100; ++$i) {
+            $date = $faker->unixTime('now');
+            $data[] = [
+                'name' => $faker->catchPhrase,
+                'slug' => $faker->slug,
+                'content' => $faker->text(3000),
+                'created_at' => date('Y-m-d H:i:s', $date),
+                'updated_at' => date('Y-m-d H:i:s', $date)
             ];
         }
-
-        $this->table('blog')
+        $this->table('posts')
             ->insert($data)
             ->save();
     }
 }
-
