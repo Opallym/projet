@@ -1,8 +1,13 @@
 <?php
 
+use Framework\Twig\TextExtension;
+use Framework\Twig\TimeExtension;
+use Framework\Twig\FlashExtension;
 use Framework\Renderer\RendererInterface;
-use Framework\Renderer\TwigRendererFactory;
 use Framework\Router\RouterTwigExtension;
+use Framework\Renderer\TwigRendererFactory;
+
+
 
 return [
     'database.host' => 'localhost',
@@ -10,8 +15,11 @@ return [
     'database.password' => '',
     'database.name' => 'cityscape',
     'views.path' => dirname(__DIR__) . '/views',
-    'twig.extensions' => [
-      \DI\get(RouterTwigExtension::class)
+   'twig.extensions' => [
+      \DI\get(RouterTwigExtension::class),
+      \DI\get(TextExtension::class),
+      \DI\get(TimeExtension::class),
+      \DI\get(FlashExtension::class)
     ],
     \Framework\Router::class => \DI\autowire(),
     RendererInterface::class => \DI\factory(TwigRendererFactory::class),
