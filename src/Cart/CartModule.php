@@ -9,8 +9,8 @@ use Framework\Renderer\RendererInterface;
 class CartModule extends Module
 {
     const DEFINITIONS = __DIR__ . '/config.php';
-    const MIGRATIONS = __DIR__ . '/db/migrations';
-    const SEEDS = __DIR__ . '/db/seeds';
+    const MIGRATIONS = __DIR__ . '/db/Migrations';
+    const SEEDS = __DIR__ . '/db/Seeds';
     
     public function __construct(
         private Router $router,
@@ -19,6 +19,7 @@ class CartModule extends Module
         $this->renderer->addPath('cart', __DIR__ . '/views');
 
         $router->get('/cart', [$this, 'index'], 'cart.index');
+        
     }
 
     public function index(): string
