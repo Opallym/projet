@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Home\Actions;
+namespace App\Checkout;
 
-use App\Home\Table\PropertiesHomeTable;
+
 use Framework\Renderer\RendererInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class HomeAction
+class CheckoutAction
 {
     public function __construct(
-        private RendererInterface $renderer,
-        private PropertiesHomeTable $properties
+        private RendererInterface $renderer
     ){}
 
     public function __invoke(Request $request)
@@ -22,20 +21,18 @@ class HomeAction
         }
         return $this->index();
     }
-
     public function index(): string
     {
-        $properties = $this->properties->findPaginated();
-        return $this->renderer->render('@home/index', compact('properties'));
+        return $this->renderer->render('@Checkout/index');
     }
 
-    public function show(string $slug)
+    public function show(string $slug): string
     {
-        /*return $this->renderer->render('@home/show', [
+        return $this->renderer->render('@Checkout/show', [
             [
                 'slug' => $slug
             ]
-        ]);*/
+        ]);
     }
     
 }
