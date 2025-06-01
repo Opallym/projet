@@ -9,5 +9,4 @@ return [
     'checkout.prefix' => '/checkout',
     CheckoutModule::class => autowire()->constructorParameter('prefix', get('checkout.prefix')),
 ];
-<?php
-return [];
+
